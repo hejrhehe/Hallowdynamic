@@ -666,15 +666,19 @@ Y.Button({
 	end
 })
 
+local amountofitems = Y.TextField({
+Text = "Item Amount"
+})
+
 Y.Button({
-	Text = "All Items",
+	Text = "Spawn Items",
 	Callback = function()
-	   Amount = 99999
+	   local Amount = amountofitems:GetText()
 local b = game.Players.LocalPlayer.Bag
 local r = game.ReplicatedStorage.REvents
 Items = {
 Recover = {"Antidote","Awakening","Burn Heal","Full Restore","Hyper Potion","Ice Heal","Max Elixir","Potion","Paralyze Heal","Revive"},
-Pokeball = {"Great Ball","Nest Ball","Net Ball","Pokeball","Premier Ball","Repeat Ball","Ultra Ball"},
+Pokeball = {"Great Ball","Nest Ball","Net Ball","Pokeball","Premier Ball","Repeat Ball","Ultra Ball", "Master Ball"},
 Evolution = {"Rare Candy","Common Candy","Dragon Scale","Fire Stone","Friendship Ribbon","Leaf Stone","Link Cable Stone","Metal Coat","Moon Stone","Sinnoh Stone","Thunder Stone","Water Stone"},
 Competitive = {"Calcium","Carbos","HP Up","Iron","Mini Stat Reset","Nature Stone","PokeImprove","Protein","Stat Reset","Zinc"}
 }
@@ -760,6 +764,10 @@ Z.Label({
 Text = "Give Pokemon to others"
 })
 
+local givenpokemonname = Z.TextField({
+Text = "Pokemon Name"
+})
+
 local person = Z.TextField({
 Text = "Player Name"
 })
@@ -767,8 +775,8 @@ Text = "Player Name"
 Z.Button({
 Text = "Spawn for Player",
 Callback = function()
-pokemon = pokemonname:GetText()
-player = person:GetText()
+local pokemon = givenpokemonname:GetText()
+local player = person:GetText()
 game.ReplicatedStorage.REvents.PC.ChangePos:InvokeServer(game.Players.LocalPlayer.PokemonParty[pokemon], 2)
 game.ReplicatedStorage.REvents.PC.ParentChange:InvokeServer(game.Players.LocalPlayer.PokemonParty[pokemon], game.Players[player].PokemonParty)
 end
