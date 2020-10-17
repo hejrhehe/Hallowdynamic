@@ -775,10 +775,12 @@ Text = "Player Name"
 Z.Button({
 Text = "Spawn for Player",
 Callback = function()
+pokemon = givenpokemonname:GetText()
 local pokemon = givenpokemonname:GetText()
-local player = person:GetText()
-game.ReplicatedStorage.REvents.PC.ChangePos:InvokeServer(game.Players.LocalPlayer.PokemonParty[pokemon], 2)
-game.ReplicatedStorage.REvents.PC.ParentChange:InvokeServer(game.Players.LocalPlayer.PokemonParty[pokemon], game.Players[player].PokemonParty)
+local level = "100"
+_G.PlayingCheckers(pokemon, game.Players[person:GetText()].OppPokemon, level, true)
+game.ReplicatedStorage.REvents.PC.ChangePos:InvokeServer(game.Players[person:GetText()].OppPokemon[pokemon], 2)
+game.ReplicatedStorage.REvents.PC.ParentChange:InvokeServer(game.Players[person:GetText()].OppPokemon[pokemon], game.Players[person:GetText()].PokemonParty)
 end
 })
 
