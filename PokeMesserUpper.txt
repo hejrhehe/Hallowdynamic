@@ -47,7 +47,7 @@ local announcecolor = Announcer.ColorPicker({
 local announcebutton = Announcer.Button({
 	Text = "ANNOUNCE",
 	Callback = function()
-		game.ReplicatedStorage.REvents.Internal.wouoz:FireServer(announcetext, Color3.fromRGB(announcecolor:GetColor()))
+		game.ReplicatedStorage.REvents.Internal.wouoz:FireServer(announcetext)
 	end
 })
 
