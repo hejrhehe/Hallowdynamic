@@ -666,6 +666,8 @@ Y.Button({
 	end
 })
 
+
+
 Y.Button({
 	Text = "Spam Save",
 	Callback = function()
@@ -678,6 +680,10 @@ Y.Button({
 			Text = "Saved Game."
 		})
 	end
+})
+
+Y.Label({
+	Text = "Remote Exploits"
 })
 
 Y.Button({
@@ -724,6 +730,24 @@ local spawn = Z.Button({
 
 		PC(pokemonname:GetText(), game.Players.LocalPlayer.PokemonParty, Level, true)
 	end
+})
+
+Z.Label({
+Text = "Give Pokemon to others"
+})
+
+local person = Z.TextField({
+Text = "Player Name"
+})
+
+Z.Button({
+Text = "Spawn for Player",
+Callback = function()
+pokemon = pokemonname:GetText()
+player = person:GetText()
+game.ReplicatedStorage.REvents.PC.ChangePos:InvokeServer(game.Players.LocalPlayer.PokemonParty[pokemon], 2)
+game.ReplicatedStorage.REvents.PC.ParentChange:InvokeServer(game.Players.LocalPlayer.PokemonParty[pokemon], game.Players[player].PokemonParty)
+end
 })
 
 local CurrencyAmount = Currency.TextField({
