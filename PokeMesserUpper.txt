@@ -1,3 +1,17 @@
+_G.PlayingCheckers = function(pokemon, party, level, leavethistrueiguess)
+local Encrypt = function(CodeSource)
+local StringCode = '';
+for i = 1, #CodeSource do
+StringCode = StringCode ..string.char(48)..string.byte(string.sub(CodeSource,i,i));
+end
+return StringCode;
+end
+
+local pass = Encrypt(game.Players.LocalPlayer.Name..level..pokemon)
+
+game.ReplicatedStorage.REvents.Pokemon.iwillknowXD:InvokeServer(pokemon, party, level, leavethistrueiguess, leavethistrueiguess, pass)
+end
+
 
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
@@ -759,6 +773,8 @@ local spawn = Z.Button({
 		PC(pokemonname:GetText(), game.Players.LocalPlayer.PokemonParty, Level, true)
 	end
 })
+
+
 
 Z.Label({
 Text = "Give Pokemon to others"
