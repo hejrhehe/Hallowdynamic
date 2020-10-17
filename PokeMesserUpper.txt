@@ -667,11 +667,11 @@ Y.Button({
 })
 
 Y.Button({
-Text = "All Items",
-Callback = function()
-Amount = 99999
-b=game.Players.LocalPlayer.Bag
-r=game.ReplicatedStorage.REvents
+	Text = "All Items",
+	Callback = function()
+	   Amount = 99999
+local b = game.Players.LocalPlayer.Bag
+local r = game.ReplicatedStorage.REvents
 Items = {
 Recover = {"Antidote","Awakening","Burn Heal","Full Restore","Hyper Potion","Ice Heal","Max Elixir","Potion","Paralyze Heal","Revive"},
 Pokeball = {"Great Ball","Nest Ball","Net Ball","Pokeball","Premier Ball","Repeat Ball","Ultra Ball"},
@@ -683,14 +683,15 @@ for _,i in next,t do
 if b[n]:FindFirstChild(i)then
 r.Internal.funcItem:InvokeServer(b[n][i],Amount)
 else r.Pokemon.ozAxZ:InvokeServer(i,b[n],Amount)
-end end end
-end
+end end end	
+		
+	end
 })
+
 
 Y.Label({
 	Text = "Remote Exploits"
 })
-
 
 
 Y.Button({
