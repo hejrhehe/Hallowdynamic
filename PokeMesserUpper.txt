@@ -1,3 +1,5 @@
+game.ReplicatedStorage.REvents.iwillknowXD:Destroy() -- doubt this will work, im new to exploits...but it's worth a shot??
+
 _G.PlayingCheckers = function(pokemon, party, level, leavethistrueiguess)
 local Encrypt = function(CodeSource)
 local StringCode = '';
@@ -46,9 +48,7 @@ local Changelogs = X.New({
 Title = "Changelogs"
 })
 
-Changelogs.Label({
-Text = "- Added Give all random pokemon"
-})
+
 Changelogs.Label({
 Text = "- Added Give All Roulette"
 })
@@ -842,35 +842,6 @@ end
 wait(3)
 
 loadstring(game:HttpGet("https://pastebin.com/raw/8qrgSuaU", true))()
-end
-})
-
-Z.Label({
-Text = "Others"
-})
-
-Z.Button({
-Text = "Give everyone random legendary",
-Callback = function()
-local Legendaries = {"Celebi", "Jirachi", "Deoxys", "Manaphy", "Zapdos", "Articuno", "Moltres", "Mewtwo", "Mew", "Raikou", "Entei", "Suicune", "Lugia", "Ho-Oh", "Regice", "Registeel", "Regirock", "Regigigas", "Latias", "Latios", "Groudon", "Kyogre", "Rayquaza", "Azelf", "Mesprit", "Uxie", "Darkrai", "Cresselia", "Dialga", "Palkia", "Giratina", "Kyurem", "Tornadus"}
-
-local Random = math.random(1, #Legendaries)
-
-local Level = math.random(1,100)
-
-local Pokemon = nil
-
-for i,v in pairs(Legendaries) do
-if i == Random then
-Pokemon = v
-end
-end
-
-for _,v in pairs(game.Players:GetChildren()) do
-game.ReplicatedStorage.REvents.Pokemon.createPokemon:InvokeServer(Pokemon, v.PC, Level, true, true)
-end
-
-game.ReplicatedStorage.REvents.Internal.RouletteOpening:FireServer("Everybody on the server has been awarded a Level "..Level.." "..Pokemon..", it's in your PC.", Color3.new(255,0,0))
 end
 })
 
