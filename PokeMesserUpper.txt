@@ -77,6 +77,7 @@ Text = "- Added Roulette Scripts"
 })
 Changelogs.Label({
 Text = "- Added Rejoin and Speed and a new tab called others"
+})
 
 local announcetext = Announcer.TextField({
 	Text = "Input what you'd like to announce in chat!",
