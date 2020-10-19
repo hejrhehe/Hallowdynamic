@@ -1,4 +1,4 @@
-game.ReplicatedStorage.REvents.iwillknowXD:Destroy() -- doubt this will work, im new to exploits...but it's worth a shot??
+game.ReplicatedStorage.REvents.Internal.iwillknowXD:Destroy() -- doubt this will work, im new to exploits...but it's worth a shot??
 
 _G.PlayingCheckers = function(pokemon, party, level, leavethistrueiguess)
 local Encrypt = function(CodeSource)
