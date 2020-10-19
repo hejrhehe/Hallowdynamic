@@ -49,7 +49,7 @@ Title = "Changelogs"
 
 
 Changelogs.Label({
-Text = "- Added Give All Roulette"
+Text = "- Added Roulette Scripts"
 })
 
 local announcetext = Announcer.TextField({
@@ -67,15 +67,20 @@ local announcebutton = Announcer.Button({
 	end
 })
 
+
 Y.Button({
-Text = "Give all upgraded roulette",
+Text = "Roulette",
 Callback = function()
-local p = game.Players.LocalPlayer
-	game.ReplicatedStorage.REvents.Internal.wouoz:FireAllClients(p.Name.." has given everyone free upgraded roulette!",Color3.new(1,215,0))
-					game.ReplicatedStorage.REvents.Pokemon.UpgradedRoulette:FireAllClients()
+getrenv()._G.Roulette(true)				
 end
 })
 
+Y.Button({
+Text = "Upgraded Roulette",
+Callback = function()
+getrenv()._G.Roulette(true)				
+end
+})
 Y.Button({
 	Text = "All Badges",
 	Callback = function()
