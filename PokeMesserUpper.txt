@@ -39,6 +39,30 @@ local Currency = X.New({
 	Title = "Currency"
 })
 
+local OffTopic = X.New({
+Title = "Others"
+})
+
+OffTopic.Button({
+Text = "Rejoin",
+Callback = function()
+local ts = game:GetService("TeleportService")
+local p = game:GetService("Players").LocalPlayer
+ 
+ts:Teleport(game.PlaceId, p)
+end
+})
+
+OffTopic.Slider({
+    Text = "Speed!",
+    Callback = function(value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+    end,
+    Min = 1,
+    Max = 400,
+    Def = 14
+})
+
 Y.Label({
 	Text = "Exploits"
 })
@@ -51,6 +75,8 @@ Title = "Changelogs"
 Changelogs.Label({
 Text = "- Added Roulette Scripts"
 })
+Changelogs.Label({
+Text = "- Added Rejoin and Speed and a new tab called others"
 
 local announcetext = Announcer.TextField({
 	Text = "Input what you'd like to announce in chat!",
