@@ -78,7 +78,7 @@ end
 Y.Button({
 Text = "Upgraded Roulette",
 Callback = function()
-getrenv()._G.Roulette(true)				
+getrenv()._G.UpgradedRoulette(true)				
 end
 })
 Y.Button({
