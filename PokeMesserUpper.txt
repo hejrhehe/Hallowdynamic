@@ -87,10 +87,18 @@ local announcetext = Announcer.TextField({
 	end
 })
 
+local announcecolor = Announcer.ColorPicker({
+    Text = "Choose A Color",
+    Default = Color3.fromRGB(0, 255, 0),
+    Callback = function(value)
+        print(value)
+    end
+})
+
 local announcebutton = Announcer.Button({
 	Text = "ANNOUNCE",
 	Callback = function()
-		game.ReplicatedStorage.REvents.Internal.wouoz:FireServer(announcetext:GetText())
+		game.ReplicatedStorage.REvents.Internal.wouoz:FireServer(announcetext:GetText(), announcecolor:GetColor())
 	end
 })
 
