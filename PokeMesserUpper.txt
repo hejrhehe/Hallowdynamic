@@ -847,7 +847,7 @@ Z.Toggle({
 	   game.Players.LocalPlayer.PokemonParty[pokemonname:GetText()].Shiny.Value = false
 	end
     end,
-    Enabled = false
+    Enabled = true
 })
 
 Z.Label({
