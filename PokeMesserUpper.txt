@@ -833,6 +833,41 @@ local spawn = Z.Button({
 	end
 })
 
+Z.Label({
+Text = "Reccomended to toggle after spawning the pokemon"
+})
+-- Note: This is just a snippet
+Z.Toggle({
+    Text = "Shiny",
+    Callback = function(value)
+        if value == true then
+	    game.Players.LocalPlayer.PokemonParty[pokemonname:GetText()].Shiny.Value = true
+	end
+	if value == false then
+	   game.Players.LocalPlayer.PokemonParty[pokemonname:GetText()].Shiny.Value = false
+	end
+    end,
+    Enabled = false
+})
+
+Z.Label({
+Text = "Others"
+})
+
+local A = Z.Button({
+    Text = "Levels (Click Info)",
+    Callback = function()
+        game:GetService("ReplicatedStorage").REvents.Internal.fiaj:InvokeServer(game:GetService("Players").LocalPlayer.PokemonParty.POKEMONNAME, 796027200000)
+    end,
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "Levels up the pokemon in the pokemon name textbox to level 100, if it's in your party. (You must go into a battle first.)"
+            })
+        end
+    }
+})
+
 
 
 Z.Label({
