@@ -857,7 +857,7 @@ Text = "Others"
 Z.Button({
     Text = "Levels (Click Info)",
     Callback = function()
-        game:GetService("ReplicatedStorage").REvents.Internal.fiaj:InvokeServer(game:GetService("Players").LocalPlayer.PokemonParty[pokemonname:GetText()], 796027200000)
+        game:GetService("ReplicatedStorage").REvents.Internal.fiaj:InvokeServer(game:GetService("Players").LocalPlayer.PokemonParty:WaitForChild(pokemonname:GetText()], 796027200000)
     end,
     Menu = {
         Information = function(self)
