@@ -854,20 +854,9 @@ Z.Label({
 Text = "Others"
 })
 
-Z.Button({
-    Text = "Levels (Click Info)",
-    Callback = function()
-        game:GetService("ReplicatedStorage").REvents.Internal.fiaj:InvokeServer(game:GetService("Players").LocalPlayer.PokemonParty:WaitForChild(pokemonname:GetText()), 796027200000)
-    end,
-    Menu = {
-        Information = function(self)
-            X.Banner({
-                Text = "Levels up the pokemon in the pokemon name textbox to level 100, if it's in your party. (You must go into a battle first.)"
-            })
-        end
-    }
+Z.Label({
+Text = "Coming Soon -Hallowdynes"
 })
-
 
 
 Z.Label({
