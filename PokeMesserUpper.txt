@@ -833,22 +833,6 @@ local spawn = Z.Button({
 	end
 })
 
-Z.Label({
-Text = "Reccomended to toggle after spawning the pokemon"
-})
--- Note: This is just a snippet
-Z.Toggle({
-    Text = "Shiny",
-    Callback = function(value)
-        if value == true then
-	    game.Players.LocalPlayer.PokemonParty[pokemonname:GetText()].Shiny.Value = true
-	end
-	if value == false then
-	   game.Players.LocalPlayer.PokemonParty[pokemonname:GetText()].Shiny.Value = false
-	end
-    end,
-    Enabled = true
-})
 
 Z.Label({
 Text = "Others"
